@@ -62,12 +62,13 @@ function adac() {
         });
 
         if(sett!=""){
-            table_body.innerHTML = sett
+            table_body.innerHTML = sett;
         }
-        console.log(table_body);
+        //console.log(table_body);
         // console.log(table_body.innerHTML);
         title.value = "";
         notes.value = "";
+        show();
     }
 }
 let as = document.getElementById("addBtn");
