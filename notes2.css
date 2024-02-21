@@ -1,14 +1,14 @@
-body{
+body {
     background-color: #ffdb92;
 }
-.notesheading{
-    text-decoration: underline;
-    color: black;
-}
+
 .container {
     /* border: 8px solid rgb(61, 57, 57); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 40vw;
-    
     background-color: rgb(255 213 194);
     color: blanchedalmond;
     text-align: center;
@@ -16,46 +16,80 @@ body{
     font-size: 1.4vw;
     margin: auto;
     height: 40vh;
-    border: 1px solid rgb(230, 245, 19);
+    border-radius: 10px;
+    border: 8px solid #444;
 }
-#addBtn{
-    padding: 5px;
+.container a{
+    text-decoration: none;
+
+}
+.notesheading {
+    color: black;
+    font-family: cursive;
+    position: relative;
+}
+.notesheading::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+}
+.notesheading:hover::after{
+    width: 100%;
+}
+.title{
+    border: none;
+    border-radius: 2px;
+    width: 70%;
+    height: 5vh;
+}
+#description{
+    width: 70%;
+    border: none;
+    border-radius: 2px;
+}
+#addBtn {
     height: 5vh;
     width: 15vw;
-    color: rgb(171, 122, 218);
+    color: white;
     font-weight: bold;
-    font-size: 1.5vw;
     border: 2px solid pink;
-    background-color: #b3fbfa;
-    transition: width 0.3s,color 1s,padding 0.4s;
+    border-radius: 10px;
+    background-color: #6568ff;
+    transition: color 1s;
 }
-#addBtn:hover{
-    width: 10vw;
-    height: 8vh;
-    padding: 10px;
-    color: rgb(43, 11, 223);
-    background-color: #94f7f5;
-    cursor:pointer;
+
+#addBtn:hover {
+    padding: 2px;
+    color: rgb(219, 223, 218);
+    cursor: pointer;
 }
-#del_btn{
-    padding: 5px;
-    height: 5vh;
+
+#del_btn {
+    height: 4vh;
     width: 8vw;
     color: rgb(0 0 0);
     font-weight: bold;
-    font-size: 1.3vw;
-    border: 2px solid #a5717a;
-    background-color: #f16161;
-    transition: width 0.3s,color 1s,padding 0.4s;
+    text-transform: capitalize;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background-color: #eb0f0f;
+    transition: transform 0.3s, color 1s;
 }
-#del_btn:hover{
-    width: 10vw;
-    height: 6vh;
+
+#del_btn:hover {
     cursor: pointer;
-    padding: 8px;
+    transform: translateX(2px);
     color: rgb(0, 0, 0);
     background-color: #fa0707;
 }
+
 textarea {
     height: 10vh;
     margin-top: 20px;
@@ -74,30 +108,37 @@ table {
     margin-top: 23px;
 }
 
-.bo{
-    
+.bo {
+
     border: 3px solid pink;
     border-collapse: collapse;
 }
+
 thead {
     text-transform: uppercase;
     font-weight: bold;
-    text-shadow: 2px 3px rgb(141 96 96);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 2px solid black;
     font-size: 2.5vw;
+    text-align: center;
 }
-td{
-    margin-left: 4px;
+
+td {
+    margin-left: 14px;
+    text-align: center;
 }
-tbody{
+
+tbody {
     font-size: 1.5vw;
     font-family: 'Times New Roman', Times, serif;
 }
-@media  screen and (max-width:600px){
-    .notesheading{
+
+@media screen and (max-width:600px) {
+    .notesheading {
         font-size: 2rem;
     }
-    #addBtn{
+
+    #addBtn {
         height: 5vh;
         width: 25vw;
         color: rgb(171, 122, 218);
@@ -106,88 +147,105 @@ tbody{
         border: 2px solid pink;
         border-radius: 10px;
         background-color: #b3fbfa;
-        transition: width 0.3s,color 1s,padding 0.4s;
+        transition: width 0.3s, color 1s, padding 0.4s;
     }
-    #addBtn:hover{
+
+    #addBtn:hover {
         width: 30vw;
         border-radius: 15px;
         height: 6vh;
         color: rgb(43, 11, 223);
         background-color: #94f7f5;
-        cursor:pointer;
+        cursor: pointer;
     }
+
     .container {
         /* border: 8px solid rgb(61, 57, 57); */
         width: 68%;
         font-size: 2vw;
     }
-    span{
+
+    span {
         display: block;
         font-size: 1.5rem;
     }
+
     textarea {
         margin-top: 0px;
     }
-    tbody{
+
+    tbody {
         font-size: 1.5rem;
         font-family: 'Times New Roman', Times, serif;
         color: white;
         border-radius: 50px;
         background-color: #f8cb71;
     }
-    .del_btn_change{
+
+    .del_btn_change {
         background-color: #ffdb92;
         border: #ffdb92;
     }
-    #del_btn{
-        /* padding: 5px; */
+
+    #del_btn {
         height: 3vh;
         width: 15vw;
-        color: rgb(0 0 0);
         font-weight: bold;
-        font-size: 1rem;
-        border: 2px solid #a5717a;
-        background-color: #f16161;
-        transition: width 0.3s,color 1s,padding 0.4s;
+        border: none;
+        border-radius: 20px;
+        font-size: 10px;
+        color: white;
+        background-color: #eb0f0f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: width 0.3s, color 1s, padding 0.4s;
+
     }
-    #del_btn:hover{
-        width: 17vw;
-        height: 4vh;
+
+    #del_btn:hover {
+        width: 15.2vw;
+        height: 3.1vh;
         cursor: pointer;
-        padding: 8px;
         color: rgb(0, 0, 0);
         background-color: #fa0707;
     }
-    .descriptionforcss{
+
+    .descriptionforcss {
         margin-top: 20px;
     }
-    .coinput{
+
+    .coinput {
         padding: 0px;
         border: none;
         width: 2vw;
     }
+
     thead {
         text-transform: uppercase;
         font-weight: bold;
-        text-shadow:none;
+        text-shadow: none;
         border: 2px solid black;
         font-size: 5vw;
     }
-    body{
+
+    body {
 
         font-size: 10vw;
     }
+
     table {
         width: 80vw;
         /* border: 2px solid brown;  */
         /* border-collapse: separate; */
         /* background-color: red; */
-    
+
         margin: auto;
         margin-top: 23px;
     }
 }
-@media  screen and (max-height:600px){
+
+@media screen and (max-height:600px) {
     table {
         width: 80vw;
         /* border: 2px solid brown;  */
@@ -196,13 +254,16 @@ tbody{
         margin: auto;
         margin-top: 60px;
     }
+
     .container {
         height: 60vh;
     }
-    #del_btn{
+
+    #del_btn {
         font-size: 0.5rem;
     }
-    #addbtn{
+
+    #addbtn {
         height: 20vh;
     }
 }
